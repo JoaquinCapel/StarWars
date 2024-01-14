@@ -1,0 +1,63 @@
+<div class="container col-md-6 offset-md-3 mt-5">
+  @if(error){
+  <div class="alert alert-danger">{{error}}</div>
+  }
+  @if (success) {
+    <div class="alert alert-success">{{success}}</div>
+  }
+  <div class="card p-4">
+    <h4 class="card-header text-warning bg-white">Login</h4>
+    <div class="card-body">
+      <p class="text-secondary">Log into your Star Wars account. If you don't have one, you can easily register now.</p>
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <div>
+            <input type="text" formControlName="username" class="form-control bg-light border-0"
+              [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Username"/>
+            @if(submitted && f.username.errors){
+            <div class="invalid-feedback">
+              @if(f.username.errors.required){
+              <div>Username is required</div>
+              }
+            </div>
+            }
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <input type="password" formControlName="password" class="form-control bg-light border-0"
+          [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password" />
+          @if (submitted && f.password.errors) {
+          <div class="invalid-feedback">
+            @if (f.password.errors.required) {
+            <div>Password is required</div>
+            }
+            @if (submitted && f.email.errors && f.email.errors.pattern) {
+            <div>Invalid email format</div>
+            }
+          </div>
+          }
+        </div>
+
+        <div>
+          <button [disabled]="loading" class="btn btn-warning text-light col-12 rounded-pill">
+            @if(loading){
+              <span class="spinner-border spinner-border-sm me-1"></span>
+            }
+            Login
+          </button>
+          <a routerLink="../register" class="btn btn-link text-warning col-12">Register</a>
+        </div>
+        <hr>
+        <div class="fw-bold text-center text-secondary">
+          <p>Star Wars is part of The Walt Disney Family of Companies.
+          </p>
+        </div>
+        <div class="VOD-img">
+          <img class="img-fluid col-12" src="assets/img/VOD.png" alt="logos Star Wars">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
