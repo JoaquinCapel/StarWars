@@ -26,12 +26,12 @@ json-server --watch db.json --port 3000
 
 2. Clone the repository:
 ```bash
-git clone https://github.com/Yul1b3th/star-wars
+git clone https://github.com/JoaquinCapel/StarWars.git
 ```
 
 3. Navigate to the project directory:
 ```bash
-cd star-wars
+cd StarWars
 ```
 
 4. Install the dependencies:
@@ -88,12 +88,12 @@ json-server --watch db.json --port 3000
 
 2. Clona el repositorio:
 ```bash
-git clone https://github.com/Yul1b3th/star-wars
+git clone https://github.com/JoaquinCapel/StarWars.git
 ```
 
 3. Ingresa al directorio del proyecto:
 ```bash
-cd star-wars
+cd StarWars
 ```
 
 4. Instala las dependencias:
